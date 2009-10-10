@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="prototype.js"></script>
+  <script type="text/javascript" src="warizan.js"></script>
+  <style>
+
+  * {
+   margin: 0px;
+   font-family: verdana, sans-serif;
+  }
+
+  h1 {
+    background-color: #ecc;
+  }
+
+  #body {
+    padding: 1em;
+    background-color: #cec;
+  }
+
+  #help {
+    padding: 1em;
+    background-color: #eec;
+  }
+
+  #results {
+    background-color: #edc;
+  }
+
+  </style>
+</head>
+<body onload="Wa.init()">
+<h1>割り算作成</h1>
+<div id="help">
+<h2>使いかた</h2>
+<ul>
+  <li>ページを開いたら, 最初に一度だけ "compute" をクリックします</li>
+  <li>ボタンに "computation is finished" と表示されるまで待ちます。(時間がかかります。)</li>
+  <li>フォームに必要な項目を入力します。</li>
+  <li>"show list" をクリックします。問題の一覧が表示されるはずです。(問題はランダムに選ばれたものです。)</li>
+  <li>表示された問題を必要に応じ Excel などへコピーします</li>
+  <li>フォームの項目を変更して "show list" を押すと、問題の一覧が更新されます</li>
+</ul>
+</div>
+<div id="body">
+<div>
+  <input type="button" id="compute" onclick="Wa.compute()" value="compute">
+</div>
+<div>
+  <form id="showList">
+  <table>
+    <tr>
+      <td> 一桁目: </td>
+      <td>
+        <select id="digit0">
+          <option value="Z">一致</option>
+          <option value="N">負</option>
+          <option value="P">正</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td> 二桁目: </td>
+      <td>
+        <select id="digit1">
+          <option value="Z">一致</option>
+          <option value="N">負</option>
+          <option value="P">正</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>問題数</td><td><input id="nProblems" value="10" /></td>
+    </tr>
+    <tr><td>
+
+    <input type="button" onclick="Wa.showList()" value="show list">
+    </td></tr>
+  </table>
+  </form>
+</div>
+<hr />
+<div id="results">
+<span>ここに一覧が表示されます</span>
+</div>
+<div id="notice"></div>
+<div>
+</boby>
+</html>
